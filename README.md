@@ -1,18 +1,3 @@
-# daftarhadirsiswa
-
-
-Berikut adalah **satu file HTML lengkap** yang sudah mencakup semua fitur yang Anda minta sebelumnya:
-
-1.  **Login Guru & Siswa** (Dengan Password Otomatis).
-2.  **Manajemen Kelas** (Tambah, Edit, Hapus, Reset Password).
-3.  **Input Absensi Manual** (Per Tanggal & Kelas).
-4.  **Menu Kelas X.1 s/d X.5** (Sesuai permintaan).
-5.  **Tombol Hapus Berfungsi** (Sudah diperbaiki).
-6.  **Fitur Download CSV** (Untuk dikirim via WA/Email di menu Riwayat).
-
-Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di browser (Chrome/Edge).
-
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -53,7 +38,7 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
         .logout-btn { background: var(--danger); color: white; }
 
         /* Info Bar */
-        .info-bar { display: flex; justify-content: space-between; background: rgba(255,255, 255, 0.95); padding: 10px 20px; border-radius: 10px; margin-bottom: 20px; font-size: 0.95rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); flex-wrap: wrap; }
+        .info-bar { display: flex; justify-content: space-between; background: rgba(255,255,255, 0.95); padding: 10px 20px; border-radius: 10px; margin-bottom: 20px; font-size: 0.95rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); flex-wrap: wrap; }
         .online-users { display: flex; align-items: center; gap: 10px; }
         .user-avatar { width: 30px; height: 30px; background: #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: bold; color: #555; border: 2px solid var(--primary); }
 
@@ -69,8 +54,8 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
         .btn-secondary { width: 100%; padding: 10px; background: #94a3b8; color: white; border: none; border-radius: 8px; margin-top: 10px; cursor: pointer; }
 
         /* Dashboard Layout */
-        .dashboard-grid { display: grid; grid-template-columns: 1fr 3fr; gap: 20px; }
-        @media (max-width: 768px) { .dashboard-grid { grid-template-columns: 1fr; } }
+        .dashboard-grid { display: grid; grid-template-columns:1fr 3fr; gap: 20px; }
+        @media (max-width: 768px) { .dashboard-grid { grid-template-columns:1fr; } }
 
         .card { background: var(--glass-bg); padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 20px; }
         .card h3 { border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 15px; color: var(--primary); }
@@ -80,23 +65,28 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
         .big-btn { width: 100%; padding: 25px; font-size: 1.5rem; background: linear-gradient(135deg, var(--success), #059669); color: white; border: none; border-radius: 15px; cursor: pointer; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4); margin-bottom: 15px; }
         .big-btn:active { transform: scale(0.98); }
 
-        .status-badge { display: inline-block; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
+        .status-badge { display: inline-block; padding:5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
         .status-present { background: #d1fae5; color: #065f46; }
 
         /* Teacher View Specifics */
         .tabs { display: flex; gap: 10px; margin-bottom: 20px; overflow-x: auto; }
-        .tab-btn { padding: 10px 20px; background: white; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; white-space: nowrap; }
+        .tab-btn { padding: 10px 20px; background: white; border:1px solid #ddd; border-radius: 8px; cursor: pointer; white-space: nowrap; }
         .tab-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
         .tab-btn.management { background: var(--accent); color: white; border-color: var(--accent); }
         .tab-btn.manual { background: var(--success); color: white; border-color: var(--success); }
 
         table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th, td { padding: 12px; text-align: left; border-bottom:1px solid #ddd; }
         th { background: #f8f9fa; color: #444; font-weight: 700; }
         tr:hover { background: #f1f5f9; }
 
         /* Password Style */
         .pass-cell { font-family: 'Courier New', Courier, monospace; background: #f1f5f9; padding: 4px 8px; border-radius: 4px; color: #333; font-weight: bold; letter-spacing: 1px; }
+
+        /* Action Buttons */
+        .action-btns { display: flex; gap: 5px; }
+        .btn-share { background: #25D366; color: white; border: none; border-radius: 5px; padding: 5px 10px; cursor: pointer; font-size: 0.8rem; display: flex; align-items: center; gap: 5px; }
+        .btn-download { background: #0ea5e9; color: white; border: none; border-radius: 5px; padding: 5px 10px; cursor: pointer; font-size: 0.8rem; display: flex; align-items: center; gap: 5px; }
 
         /* Management & Class Cards */
         .class-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; margin-bottom: 25px; }
@@ -104,11 +94,10 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
         .class-card:hover, .class-card.active { border-color: var(--primary); background: #eff6ff; transform: translateY(-5px); }
         .class-card.active { color: var(--primary); }
 
-        .btn-small { padding: 5px 10px; border-radius: 5px; border: none; cursor: pointer; font-size: 0.8rem; color: white; margin-right: 5px; }
+        .btn-small { padding: 5px 10px; border-radius:5px; border: none; cursor: pointer; font-size: 0.8rem; color: white; margin-right: 5px; }
         .btn-danger { background: var(--danger); }
         .btn-edit { background: var(--accent); }
         .btn-pass { background: #64748b; font-size: 0.7rem; }
-        .btn-download { background: #0ea5e9; color: white; border: none; border-radius: 5px; padding: 5px 10px; cursor: pointer; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 5px; }
 
         /* Manual Attendance Specifics */
         .manual-controls { display: flex; gap: 15px; align-items: flex-end; margin-bottom: 20px; background: #f8fafc; padding: 15px; border-radius: 10px; flex-wrap: wrap; }
@@ -127,6 +116,29 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
         #toast.show { visibility: visible; animation: fadein 0.5s, fadeout 0.5s 2.5s; }
         @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
         @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+
+        /* SHARE MODAL */
+        .modal-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6); z-index: 200; justify-content: center; align-items: center;
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .modal-overlay.show { display: flex; opacity: 1; }
+        .modal-content {
+            background: white; padding: 30px; border-radius: 15px; width: 90%; max-width: 500px;
+            box-shadow: 0 20px 25px rgba(0,0,0,0.2); text-align: center; position: relative;
+        }
+        .close-modal {
+            position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; color: #aaa;
+        }
+        .close-modal:hover { color: var(--danger); }
+        .share-options { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+        .share-btn-app {
+            display: flex; flex-direction: column; align-items: center; padding: 15px;
+            border: 1px solid #ddd; border-radius: 10px; cursor: pointer; transition: 0.2s;
+        }
+        .share-btn-app:hover { background: #f9fafb; border-color: var(--primary); }
+        .share-icon { font-size: 32px; margin-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -191,7 +203,8 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
                 </div>
                 <div class="card">
                     <h3 id="my-history-title">Riwayat Saya</h3>
-                    <button class="btn-download" style="margin-bottom:10px; width:100%;" onclick="downloadStudentCSV()">📥 Download Riwayat (CSV)</button>
+                    <button class="btn-download" style="margin-bottom:10px; width:100%;" onclick="downloadStudentCSV()">📥 Download CSV</button>
+                    <button class="btn-share" style="margin-bottom:10px; width:100%; justify-content:center;" onclick="openShareModal()">📤 Kirim Laporan</button>
                     <ul id="student-history-list" style="list-style: none; padding-left: 0; font-size: 0.9rem;"></ul>
                 </div>
             </aside>
@@ -274,7 +287,10 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
                 <div id="content-history" class="hidden">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                         <h4 id="lbl-history">Riwayat Absensi (Detail Detik)</h4>
-                        <button class="btn-download" onclick="downloadTeacherCSV()">📥 Download Data (CSV)</button>
+                        <div class="action-btns">
+                            <button class="btn-download" onclick="downloadTeacherCSV()">📥 CSV</button>
+                            <button class="btn-share" onclick="openShareModal()">📤 Kirim</button>
+                        </div>
                     </div>
                     <div style="overflow-x: auto; margin-top: 10px; max-height: 400px;">
                         <table id="table-history">
@@ -288,7 +304,10 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
                 <div id="content-monthly" class="hidden">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                         <h4 id="lbl-monthly">Rekapan Bulanan</h4>
-                        <button class="btn-download" onclick="downloadTeacherCSV()">📥 Download (CSV)</button>
+                        <div class="action-btns">
+                            <button class="btn-download" onclick="downloadTeacherCSV()">📥 CSV</button>
+                            <button class="btn-share" onclick="openShareModal()">📤 Kirim</button>
+                        </div>
                     </div>
                     <div style="margin-bottom: 15px;">
                         <select id="month-select" onchange="renderMonthlyRecap()" style="padding: 5px; border-radius: 5px;"></select>
@@ -341,6 +360,31 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
         </footer>
     </div>
 
+    <!-- SHARE MODAL -->
+    <div id="share-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeShareModal()">&times;</span>
+            <h3 style="margin-bottom: 20px; color: var(--primary);">Kirim Laporan ke Aplikasi</h3>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 20px;">
+                Laporan akan dibuat dalam format teks dan dikirim ke aplikasi pilihan Anda di bawah.
+            </p>
+            <div class="share-options">
+                <div class="share-btn-app" onclick="sendToApp('whatsapp')">
+                    <div class="share-icon" style="color:#25D366;">📱</div>
+                    <strong>WhatsApp</strong>
+                </div>
+                <div class="share-btn-app" onclick="sendToApp('telegram')">
+                    <div class="share-icon" style="color:#0088cc;">✈️</div>
+                    <strong>Telegram</strong>
+                </div>
+                <div class="share-btn-app" onclick="sendToApp('email')">
+                    <div class="share-icon" style="color:#EA4335;">✉️</div>
+                    <strong>Email</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Toast -->
     <div id="toast">Notifikasi</div>
 
@@ -364,13 +408,13 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
             backgroundIndex: 0,
             selectedClassFilter: null,
             editingStudentId: null,
+            shareMessage: "", // Text to be sent to apps
             bgUrls: [
                 'https://picsum.photos/seed/school1/1920/1080',
                 'https://picsum.photos/seed/tech2/1920/1080',
                 'https://picsum.photos/seed/library3/1920/1080',
                 'https://picsum.photos/seed/class4/1920/1080'
             ],
-            // ONLY CLASSES X.1 TO X.5
             classes: [
                 { id: 'X.1', name: 'Kelas X.1' },
                 { id: 'X.2', name: 'Kelas X.2' },
@@ -378,7 +422,7 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
                 { id: 'X.4', name: 'Kelas X.4' },
                 { id: 'X.5', name: 'Kelas X.5' }
             ],
-            // DEMO STUDENTS (Specific names removed, IDs start from 5)
+            // Demo students
             students: [
                 { id: 5, name: "Eko Prasetyo", class: "X.3", password: generateRandomPassword() },
                 { id: 6, name: "Fajar Nugraha", class: "X.3", password: generateRandomPassword() },
@@ -419,15 +463,16 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
                 lblToday: "Absensi Hari Ini (Auto)", lblManualAtt: "Input Absensi Manual",
                 lblHistory: "Riwayat Absensi (Detail Detik)", lblMonthly: "Rekapan Bulanan", lblYearly: "Rekapan Tahunan",
                 lblDateSel: "Tanggal", lblClassSel: "Kelas", thNameMan: "Nama Siswa", thStatusMan: "Status Kehadiran",
-                btnLoad: "Tampilkan", btnSave: "Simpan Absensi", btnResetPass: "Reset",
+                btnLoad: "Tampilkan", btnSave: "Simpan Absensi", btnResetPass: "Reset", btnShare: "Kirim",
                 checkIn: "HADIR SEKARANG", welcomeStud: "Halo,",
                 msgSuccess: "Absensi Berhasil Dicatat!", msgError: "Username atau Password Salah!", msgSaved: "Data Absensi Disimpan!",
                 msgAddSuccess: "Siswa Berhasil Ditambahkan & Disimpan!", msgUpdateSuccess: "Data Siswa Diperbarui!", msgDelSuccess: "Siswa Berhasil Dihapus!",
-                msgPassReset: "Password siswa berhasil di-reset.", msgDownload: "Mengunduh Data...",
+                msgPassReset: "Password siswa berhasil di-reset.",
                 msgResetConfirm: "PERINGATAN: Semua data siswa dan absensi akan dihapus permanen dan dikembalikan ke kondisi awal. Lanjutkan?",
                 welcome: "Selamat Datang di SMAN 1 KAPONTORI", teacherName: "Guru: Unggul Menawan, S.Pd.",
                 stHadir: "Hadir", stSakit: "Sakit", stIzin: "Izin", stAlfa: "Alfa",
-                formAdd: "Tambah Siswa Baru", formEdit: "Edit Data Siswa"
+                formAdd: "Tambah Siswa Baru", formEdit: "Edit Data Siswa",
+                lblShare: "Kirim Laporan ke Aplikasi"
             },
             en: {
                 loginTitle: "Welcome", lblUser: "Username (Name)", lblPass: "Password", btnLogin: "Login", btnLogout: "Logout",
@@ -438,78 +483,19 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
                 lblToday: "Today's Attendance (Auto)", lblManualAtt: "Manual Attendance Input",
                 lblHistory: "Attendance History (Seconds Detail)", lblMonthly: "Monthly Recap", lblYearly: "Yearly Recap",
                 lblDateSel: "Date", lblClassSel: "Class", thNameMan: "Student Name", thStatusMan: "Attendance Status",
-                btnLoad: "Load", btnSave: "Save Attendance", btnResetPass: "Reset",
+                btnLoad: "Load", btnSave: "Save Attendance", btnResetPass: "Reset", btnShare: "Send",
                 checkIn: "CHECK IN NOW", welcomeStud: "Hello,",
                 msgSuccess: "Attendance Recorded Successfully!", msgError: "Wrong Username or Password!", msgSaved: "Attendance Data Saved!",
                 msgAddSuccess: "Student Added & Saved Successfully!", msgUpdateSuccess: "Student Data Updated!", msgDelSuccess: "Student Deleted Successfully!",
-                msgPassReset: "Student password has been reset.", msgDownload: "Downloading Data...",
+                msgPassReset: "Student password has been reset.",
                 msgResetConfirm: "WARNING: All student and attendance data will be permanently deleted and reset to default. Continue?",
                 welcome: "Welcome to SMAN 1 KAPONTORI", teacherName: "Teacher: Unggul Menawan, S.Pd.",
                 stHadir: "Present", stSakit: "Sick", stIzin: "Permission", stAlfa: "Absent",
-                formAdd: "Add New Student", formEdit: "Edit Student Data"
+                formAdd: "Add New Student", formEdit: "Edit Student Data",
+                lblShare: "Send Report to App"
             }
         };
 
-        // --- CSV EXPORT FUNCTIONS (NEW) ---
-        function downloadTeacherCSV() {
-            let dataToExport = state.attendance;
-            dataToExport.sort((a,b) => b.timestamp - a.timestamp);
-
-            let csvContent = "data:text/csv;charset=utf-8,";
-            csvContent += "ID Siswa,Nama Siswa,Tanggal,Jam,Kelas,Status\n"; 
-
-            dataToExport.forEach(row => {
-                const d = new Date(row.timestamp);
-                const dateStr = d.toLocaleDateString('id-ID'); 
-                const timeStr = d.toLocaleTimeString('id-ID', {hour12: false}); 
-                
-                const student = state.students.find(s => s.id === row.studentId);
-                const studentClass = student ? student.class : "Unknown";
-                const safeName = row.name.replace(/,/g, " ");
-
-                csvContent += `${row.studentId},${safeName},${dateStr},${timeStr},${studentClass},${row.status}\n`;
-            });
-
-            const encodedUri = encodeURI(csvContent);
-            const link = document.createElement("a");
-            link.setAttribute("href", encodedUri);
-            link.setAttribute("download", `Data_Absensi_Full_${new Date().toISOString().split('T')[0]}.csv`);
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            showToast(i18n[state.lang].msgDownload);
-        }
-
-        function downloadStudentCSV() {
-            if(!state.currentUser) return;
-
-            const myLogs = state.attendance.filter(a => a.studentId === state.currentUser.id).sort((a,b) => b.timestamp - a.timestamp);
-            
-            let csvContent = "data:text/csv;charset=utf-8,";
-            csvContent += "ID,Nama Lengkap,Tanggal,Jam,Status\n";
-
-            myLogs.forEach(row => {
-                const d = new Date(row.timestamp);
-                const dateStr = d.toLocaleDateString('id-ID');
-                const timeStr = d.toLocaleTimeString('id-ID', {hour12: false});
-                const safeName = row.name.replace(/,/g, " ");
-                
-                csvContent += `${row.studentId},${safeName},${dateStr},${timeStr},${row.status}\n`;
-            });
-
-            const encodedUri = encodeURI(csvContent);
-            const link = document.createElement("a");
-            link.setAttribute("href", encodedUri);
-            link.setAttribute("download", `Riwayat_Absensi_${state.currentUser.name.replace(/\s+/g, '_')}.csv`);
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-
-            showToast(i18n[state.lang].msgDownload);
-        }
-
-        // --- CORE FUNCTIONS ---
         function init() {
             const savedStudents = localStorage.getItem(STORAGE_KEYS.STUDENTS);
             if (savedStudents) {
@@ -636,8 +622,7 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
             const p = document.getElementById('password').value;
 
             if (u === 'guru' && p === 'guru123') {
-                state.currentUser = 'guru';
-                enterTeacherView();
+                state.currentUser = 'guru'; enterTeacherView();
             } 
             else {
                 const studentUser = state.students.find(s => s.name.toLowerCase() === u);
@@ -694,17 +679,35 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
             if(!state.currentUser) return;
             const list = document.getElementById('student-history-list');
             list.innerHTML = '';
-            const myLogs = state.attendance.filter(a => a.studentId === state.currentUser.id).sort((a,b) => b.timestamp - a.timestamp).slice(0, 5);
-            if(myLogs.length === 0) { list.innerHTML = '<li>Belum ada riwayat.</li>'; return; }
-            myLogs.forEach(log => {
-                const d = new Date(log.timestamp);
-                const dateStr = d.toLocaleDateString('id-ID', {day: 'numeric', month: 'short'});
-                const timeStr = d.toLocaleTimeString('id-ID', {hour: '2-digit', minute:'2-digit'});
-                const li = document.createElement('li');
-                li.style.marginBottom = '8px'; li.style.padding = '5px'; li.style.background = '#f9fafb'; li.style.borderRadius = '5px';
-                li.innerHTML = `<b>${dateStr}</b> - ${timeStr} <span class="status-badge status-present">${log.status}</span>`;
-                list.appendChild(li);
-            });
+            
+            // Prepare Share Message for Student
+            const logs = state.attendance.filter(a => a.studentId === state.currentUser.id).sort((a,b) => b.timestamp - a.timestamp);
+            
+            // Generate text for sharing
+            let message = `*SISTEM ABSENSI - SMAN 1 KAPONTORI*\n`;
+            message += `Nama: ${state.currentUser.name}\n`;
+            message += `Kelas: ${state.currentUser.class}\n\n`;
+            message += `*Riwayat Kehadiran:\n`;
+            if (logs.length === 0) {
+                message += `(Belum ada data kehadiran)`;
+                list.innerHTML = '<li>Belum ada riwayat.</li>';
+            } else {
+                logs.slice(0, 10).forEach((log, i) => {
+                    const d = new Date(log.timestamp);
+                    const dateStr = d.toLocaleDateString('id-ID', {day: 'numeric', month: 'long'});
+                    const timeStr = d.toLocaleTimeString('id-ID', {hour: '2-digit', minute:'2-digit'});
+                    
+                    // Append to list
+                    const li = document.createElement('li');
+                    li.style.marginBottom = '8px'; li.style.padding = '5px'; li.style.background = '#f9fafb'; li.style.borderRadius = '5px';
+                    li.innerHTML = `<b>${dateStr}</b> - ${timeStr} <span class="status-badge status-present">${log.status}</span>`;
+                    list.appendChild(li);
+
+                    // Append to share message
+                    message += `${i+1}. ${dateStr} jam ${timeStr} - ${log.status}\n`;
+                });
+            }
+            state.shareMessage = message;
         }
 
         // --- TEACHER LOGIC ---
@@ -734,6 +737,43 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
             if(tabName === 'management') renderManagement();
         }
 
+        // --- SHARE LOGIC ---
+        function openShareModal() {
+            // If message not generated yet (e.g. just logged in), generate it.
+            if(!state.shareMessage) {
+                if(state.currentUser === 'guru') {
+                    state.shareMessage = `Laporan Absensi Guru\nBelum ada data absensi yang ditampilkan.`;
+                } else {
+                    renderStudentHistory(); // Force generation
+                }
+            }
+            document.getElementById('share-modal').classList.add('show');
+        }
+
+        function closeShareModal() {
+            document.getElementById('share-modal').classList.remove('show');
+        }
+
+        function sendToApp(appType) {
+            const text = state.shareMessage;
+            const encodedText = encodeURIComponent(text);
+            let url = "";
+
+            if (appType === 'whatsapp') {
+                // Using api.whatsapp.com for best web support
+                url = `https://api.whatsapp.com/send?text=${encodedText}`;
+            } else if (appType === 'telegram') {
+                // Using t.me share url (url is optional if we just send text)
+                url = `https://t.me/share/url?url=&text=${encodedText}`;
+            } else if (appType === 'email') {
+                const subject = encodeURIComponent("Laporan Absensi SMAN 1 KAPONTORI");
+                url = `mailto:?subject=${subject}&body=${encodedText}`;
+            }
+
+            window.open(url, '_blank');
+            closeShareModal();
+        }
+
         // --- MANAGEMENT LOGIC (FIXED) ---
         function resetSystemData() {
             if(confirm(i18n[state.lang].msgResetConfirm)) {
@@ -744,7 +784,7 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
         }
 
         function resetPassword(id) {
-            const targetId = Number(id); // Fix: Convert ID from String to Number
+            const targetId = Number(id);
             const index = state.students.findIndex(s => s.id === targetId);
             if(index !== -1) {
                 state.students[index].password = generateRandomPassword();
@@ -770,7 +810,7 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
         }
 
         function editStudent(id) {
-            const targetId = Number(id); // Fix: Convert ID from String to Number
+            const targetId = Number(id);
             const student = state.students.find(s => s.id === targetId);
             if(!student) return;
 
@@ -823,7 +863,7 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
         }
 
         function deleteStudent(id) {
-            const targetId = Number(id); // Fix: Convert ID from String to Number
+            const targetId = Number(id);
             if(confirm("Yakin ingin menghapus siswa ini? Data akan dihapus permanen.")) {
                 state.students = state.students.filter(s => s.id !== targetId);
                 saveData(); 
@@ -994,6 +1034,17 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
             const today = new Date(); today.setHours(0,0,0,0);
             const todayLogs = state.attendance.filter(a => a.timestamp >= today.getTime()).sort((a,b) => a.timestamp - b.timestamp);
             if(todayLogs.length === 0) { tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;">Belum ada data hari ini</td></tr>'; return; }
+            
+            // Generate summary for sharing (Teacher)
+            let summary = "*Laporan Absensi Hari Ini*\n";
+            todayLogs.forEach(log => {
+                const d = new Date(log.timestamp);
+                const timeStr = d.toLocaleTimeString('id-ID', {hour: '2-digit', minute:'2-digit', second:'2-digit'});
+                summary += `${log.name} - ${timeStr} (${log.status})\n`;
+            });
+            if(todayLogs.length === 0) summary += "(Belum ada data)";
+            state.shareMessage = summary;
+
             todayLogs.forEach(log => {
                 const d = new Date(log.timestamp);
                 const timeStr = d.toLocaleTimeString('id-ID', {hour: '2-digit', minute:'2-digit', second:'2-digit'});
@@ -1005,6 +1056,20 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
         function renderHistory() {
             const tbody = document.querySelector('#table-history tbody'); tbody.innerHTML = '';
             const allLogs = [...state.attendance].sort((a,b) => b.timestamp - a.timestamp);
+            
+            // Generate summary for sharing (Full History)
+            // Limit to last 20 for sharing to avoid text overflow
+            let summary = "*Laporan Absensi Lengkap*\n";
+            const logsForShare = allLogs.slice(0, 20);
+            
+            logsForShare.forEach(log => {
+                const d = new Date(log.timestamp);
+                const dateStr = d.toLocaleDateString('id-ID');
+                const timeStr = d.toLocaleTimeString('id-ID', {hour: '2-digit', minute:'2-digit'});
+                summary += `${dateStr} ${timeStr} - ${log.name} - ${log.status}\n`;
+            });
+            state.shareMessage = summary;
+
             allLogs.forEach(log => {
                 const d = new Date(log.timestamp);
                 const dateStr = d.toLocaleDateString('id-ID');
@@ -1074,4 +1139,3 @@ Silakan simpan kode di bawah ini dengan nama file `absensi.html` lalu buka di br
     </script>
 </body>
 </html>
-```
